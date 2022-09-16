@@ -1,0 +1,51 @@
+<% layout('layouts/boilerplate')%>
+
+    <div class="row">
+        <h1 class="text-left" style="color:blue">Profile Information</h1>
+        <div class="col-4 offset-1">
+
+
+
+            <form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+                 <div>
+                <p><label class="form-label" for="what_describes_you">What_describes_you</label></p>
+                <input type="text" id="what_describes_you" name="profile[what_describes_you]" value="<%= profile.what_describes_you %>">
+                </div>
+                <div class="form-group">
+                    <p><label class="form-label" for="in_business_since">In_business_since</label></p>
+                    <select class="form-control" id="in_business_since" name="profile[in_business_since]" value="<%= profile.in_business_since %>">
+                        <option>1991</option>
+                        <option>1992</option>
+                        <option>1993</option>
+                        <option>1994</option>
+                        <option>1995</option>
+                    </select>
+                </div>
+                <div>
+                    <p><label class="form-label" for="categories">Categories</label></p>
+                    <select class="form-control" id="categories" name="profile[categories]"
+                        value="<%= profile.categories %>">
+                        <option>a</option>
+                        <option>b</option>
+                        <option>c</option>
+                        <option>d</option>
+                        <option>e</option>
+                    </select>
+                <div>
+                    <p><label class="form-label" for="description">Description</label></p>
+                       <textarea name="profile[description]" id="description" value="<%= profile.description %>" cols="30" rows="3"></textarea>             
+                </div>
+                <div>
+                    <p><label class="form-label" for="website">Website</label></p>
+                    <input type="text" id="website" name="profile[website]" value="<%= profile.website %>">        
+                </div>
+
+        
+        <button class="btn btn-primary">Save & Continue</button>
+        </form>
+        </div>
+        <a href="/profiles/<%= profile._id %>">Back</a>
+
+
+    </div>
+    </div>
